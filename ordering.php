@@ -16,11 +16,9 @@
                             $sum = 0;
                             for ($i = 0; $i < $_SESSION['basketcounter']; $i++) {
                                 $sum = $sum + $_SESSION['price' . $i] * $_SESSION['quantity' . $i];
-                                echo '
-                                                <tr><td><b>', $_SESSION['item' . $i], '</b></td><td>', $_SESSION['item_name' . $i], '</td><td>', $_SESSION['price' . $i], ' руб.</td><td>', $_SESSION['quantity' . $i], ' шт. </td>
-                                                <td> ', $_SESSION['price' . $i] * $_SESSION['quantity' . $i], ' руб.</td>
-                                                <br>
-                                                ';
+                                echo ' <tr><td><b>', $_SESSION['item' . $i], '</b></td><td>', $_SESSION['item_name' . $i], '</td><td>', $_SESSION['price' . $i], ' руб.</td><td>', $_SESSION['quantity' . $i], ' шт. </td>
+                                       <td> ', $_SESSION['price' . $i] * $_SESSION['quantity' . $i], ' руб.</td>
+                                        <br>';
                             }
                            echo '
                               <tr>
