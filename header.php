@@ -2,10 +2,9 @@
 <div class="daynews">
          <?		
             $daynews=file('files/daynews.txt', FILE_IGNORE_NEW_LINES);
-            for ($i=0; $i<count($daynews); $i++)
-            		{
-            			echo $daynews[$i];
-            		}
+            for ($i=0; $i<count($daynews); $i++) {
+            	echo $daynews[$i];
+            }
             ?>
       </div>
    <div class="logo">
@@ -14,7 +13,6 @@
     <div class="reg">
          <?php
 		if (isset($_SESSION['login'])) {
-
 		    if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
 			echo '<p>Здравствуйте, ', $_SESSION['login'], '  Роль: администратор </p><p> <a href="exit.php">Выйти</a>  <a href="cabinet.php">Панель управления</a> </p>';
 		    } else {
