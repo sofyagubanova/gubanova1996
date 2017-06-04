@@ -5,7 +5,7 @@
          <?require 'header.php';?>
          <div id="main">
             <div id="catalog">
-               <h2><a class="post_ttl" title="РЕГИСТРАЦИЯ">РЕГИСТРАЦИЯ</a></h2>
+               <h2><a class="post_ttl" title="Регистрация">Регистрация</a></h2>
                <div id="form_reg">
                   <form method="post" action="register.php">
                      <p align="center">Логин</p>
@@ -15,13 +15,20 @@
                      <br>
                      <br>
                      <p align="center"><input style="height: 50px; width: 250px; font-size: 22px; cursor:pointer;" type="submit" value="Зарегистрироваться"></p>
-                     <?
-                        $_SESSION['login_already_exist']=false;
-                        if ($_SESSION['login_already_exist']==true){
-                        	echo '<p align="center">Этот логин уже занят. Пожалуйста, введите другой логин</p>';
-                        	$_SESSION['login_already_exist']=false;
-                        }
-                      ?>
+                     <?php
+						if (isset($_SESSION['login'])) {
+							echo '<script>location.href="index.php"</script>';
+						}
+						else {
+							if(!empty($_SESSION['login_already_exist'])){
+								if ($_SESSION['login_already_exist']==true)
+								{
+									echo '<p align="center">Этот логин занят. Пожалуйста, введите другой логин.</p>';
+									$_SESSION['login_already_exist']=false;
+								}
+							}
+						}
+						?>
                   </form>
                </div>
             </div>
